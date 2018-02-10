@@ -73,7 +73,7 @@ public class Generator extends AppCompatActivity {
 
         try {
             //dictionary.txt should be in the assets folder.
-            dict = new BufferedReader(new InputStreamReader(am.open("german_words.dict"), "UTF-8"));
+            dict = new BufferedReader(new InputStreamReader(am.open("german_words.dict"), "windows-1252"));
 
             String word;
             while((word = dict.readLine()) != null){
@@ -101,6 +101,5 @@ public class Generator extends AppCompatActivity {
 
     private String getRandomWord(ArrayList<String> dict){
         return dict.get((int)(Math.random() * dict.size()));
-
     }
 }
