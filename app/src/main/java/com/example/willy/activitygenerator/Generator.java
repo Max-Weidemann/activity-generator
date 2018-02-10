@@ -54,7 +54,7 @@ public class Generator extends AppCompatActivity {
 
             String word;
             while((word = dict.readLine()) != null){
-                System.out.println(word);
+                // System.out.println(word);
                 dictionary.add(word);
             }
 

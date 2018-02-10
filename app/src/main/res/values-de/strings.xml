@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Activity Generator</string>
+    <string name="generate">Generieren</string>
+    <string name="new_word">Neues Wort</string>
+    <string name="settings">Einstellungen</string>
+</resources>

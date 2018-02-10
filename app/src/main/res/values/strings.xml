@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Activity Generator</string>
-    <string name="generate">generate</string>
-    <string name="new_word">Neues Wort</string>
+    <string name="generate">Generate</string>
+    <string name="new_word">New Word</string>
+    <string name="menu_action_settings">Settings</string>
+    <string name="menu_action_about_us">About us</string>
 </resources>
