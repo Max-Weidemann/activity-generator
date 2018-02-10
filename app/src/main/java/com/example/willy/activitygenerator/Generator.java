@@ -31,7 +31,7 @@ public class Generator extends AppCompatActivity {
         btnGenerate = findViewById(R.id.button_generate);
         txtWord = findViewById(R.id.textView_newWord);
 
-        final ArrayList<String> dict = loadDictionary("german_words.dict");
+        final ArrayList<String> dict = loadDictionary();
 
         btnGenerate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +42,7 @@ public class Generator extends AppCompatActivity {
         });
     }
 
-    private ArrayList<String> loadDictionary(String pathToDict){
+    private ArrayList<String> loadDictionary(){
         ArrayList<String> dictionary = new ArrayList<>();
 
         BufferedReader dict = null;
@@ -50,11 +50,11 @@ public class Generator extends AppCompatActivity {
 
         try {
             //dictionary.txt should be in the assets folder.
-            dict = new BufferedReader(new InputStreamReader(am.open(pathToDict), "UTF-8"));
+            dict = new BufferedReader(new InputStreamReader(am.open("german_words.dict"), "UTF-8"));
 
             String word;
             while((word = dict.readLine()) != null){
-                System.out.println(word);
+//                System.out.println(word);
                 dictionary.add(word);
             }
 
