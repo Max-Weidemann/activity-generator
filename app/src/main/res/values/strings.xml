@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Activity Generator</string>
+    <string name="generate">generate</string>
+    <string name="new_word">Neues Wort</string>
+</resources>
