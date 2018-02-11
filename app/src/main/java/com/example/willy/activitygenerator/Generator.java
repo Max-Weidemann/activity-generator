@@ -1,27 +1,36 @@
 package com.example.willy.activitygenerator;
 
-import android.content.Context;
 import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.ContextMenu;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
-import android.widget.Toast;
+import android.os.CountDownTimer;
+import android.content.Intent;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+import java.util.Locale;
+
+//Unused:
+/*import android.annotation.SuppressLint;
+import android.content.Context;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
+import android.view.TextureView;
+import android.widget.TextClock;
+import android.widget.Toast;
 import java.util.Random;
-// import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.ThreadLocalRandom;*/
 
 public class Generator extends AppCompatActivity {
 
@@ -33,9 +42,11 @@ public class Generator extends AppCompatActivity {
 
     // Text Views
     TextView txtWord;
+    TextView countdown_timer;
 
     //Job ImageView
     ImageView jobView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +61,7 @@ public class Generator extends AppCompatActivity {
         btnGenerate = findViewById(R.id.button_generate);
         txtWord = findViewById(R.id.textView_newWord);
         jobView = findViewById(R.id.imageView_todo);
+        countdown_timer = findViewById(R.id.textView_clock);
 
         final ArrayList<String> dict = loadDictionary();
 
@@ -83,6 +95,22 @@ public class Generator extends AppCompatActivity {
                 {
                     jobView.setImageResource(R.drawable.ic_meme);
                 }
+
+                new CountDownTimer(300000, 1000) {
+
+                    public void onTick(long millisUntilFinished) {
+                        String text = String.format(Locale.getDefault(), "%02d:%02d",
+                                TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) % 60,
+                                TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) % 60);
+                        countdown_timer.setText(text);
+                        // countdown_timer.setText("Timer: " + millisUntilFinished / 1000);
+                    }
+
+                    public void onFinish() {
+                        countdown_timer.setText(R.string.time_over);
+                    }
+                }.start();
+
             }
         });
     }
@@ -97,6 +125,12 @@ public class Generator extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_settings:
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 

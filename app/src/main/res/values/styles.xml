@@ -1,11 +1,12 @@
 <resources>
-
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#0098FF</item>
+        <item name="colorPrimaryDark">#007CF5</item>
+        <item name="colorAccent">#FF5522</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+        <item name="windowActionModeOverlay">true</item>
     </style>
-
 </resources>
