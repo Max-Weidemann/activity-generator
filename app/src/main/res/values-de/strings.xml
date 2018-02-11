@@ -4,4 +4,9 @@
     <string name="generate">Generieren</string>
     <string name="new_word">Neues Wort</string>
     <string name="settings">Einstellungen</string>
+    <string name="team_number">Anzahl der Teams</string>
+    <string name="menu_action_settings">Einstellungen</string>
+    <string name="menu_action_about_us">Über uns</string>
+    <string name="time_over">Ende!</string>
+    <string name="time_left">übrig</string>
 </resources>
