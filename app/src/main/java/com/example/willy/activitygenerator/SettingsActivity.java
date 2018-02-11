@@ -1,6 +1,7 @@
 package com.example.willy.activitygenerator;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.app.FragmentManager;
 import android.app.Fragment;
@@ -43,6 +44,10 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
     {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
+
+        /*int numPla = 1;
+        Resources res = getResources();
+        String numPlayers = res.getQuantityString(R.plurals.players, numPla, numPla);*/
     }
 
 /*    @Override

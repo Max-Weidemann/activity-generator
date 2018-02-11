@@ -1,24 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="check_box_preference_1"
-        android:title="Check box preference" />
-    <EditTextPreference
-        android:defaultValue="Default value"
-        android:key="edit_text_preference_1"
-        android:selectAllOnFocus="true"
-        android:singleLine="true"
-        android:title="Edit text preference" />
     <ListPreference
         android:defaultValue="1"
+        android:dialogIcon="@drawable/ic_teams"
         android:entries="@array/team_number"
         android:entryValues="@array/team_number"
+        android:icon="@drawable/ic_teams"
         android:key="list_preference_tn"
-        android:title="@string/team_number" />
+        android:title="@string/team_number"
+        android:summary="@plurals/players"/>
+    <EditTextPreference
+        android:defaultValue="30"
+        android:key="edit_text_preference_points"
+        android:selectAllOnFocus="true"
+        android:icon="@drawable/ic_points"
+        android:singleLine="true"
+        android:inputType="number"
+        android:title="@string/point_limit"
+        android:summary="@string/points"/>
+    <!-- See Link in Discord for editing summary -->
+    <EditTextPreference
+        android:defaultValue="10"
+        android:icon="@drawable/ic_rounds"
+        android:inputType="number"
+        android:key="edit_text_preference_rounds"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/round_limit" />
+    <ListPreference
+        android:defaultValue="1"
+        android:dialogIcon="@drawable/ic_skip"
+        android:entries="@array/skip_limit"
+        android:entryValues="@array/skip_limit"
+        android:icon="@drawable/ic_skip"
+        android:key="list_preference_sk"
+        android:summary="@plurals/skips"
+        android:title="@string/skip_limit" />
     <SwitchPreference
         android:defaultValue="false"
-        android:key="switch_preference_1"
-        android:title="Switch preference" />
+        android:icon="@drawable/ic_win"
+        android:key="switch_preference_win"
+        android:title="@string/switch_win" />
 </PreferenceScreen>

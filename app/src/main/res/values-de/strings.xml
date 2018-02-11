@@ -9,4 +9,5 @@
     <string name="menu_action_about_us">Über uns</string>
     <string name="time_over">Ende!</string>
     <string name="time_left">übrig</string>
+    <string name="points_limit">Punkte Limit</string>
 </resources>
