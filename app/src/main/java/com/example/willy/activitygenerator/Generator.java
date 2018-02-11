@@ -63,7 +63,7 @@ public class Generator extends AppCompatActivity {
         setContentView(R.layout.activity_generator);
 
         // Linking
-        btnGenerate = findViewById(R.id.button_generate);
+        btnGenerate = findViewById(R.id.button_check);
         txtWord = findViewById(R.id.textView_newWord);
         jobView = findViewById(R.id.imageView_todo);
         countdown_timer = findViewById(R.id.textView_clock);

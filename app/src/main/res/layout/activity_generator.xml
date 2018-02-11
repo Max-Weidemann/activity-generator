@@ -26,18 +26,6 @@
         android:layout_height="200dp"
         app:srcCompat="@drawable/ic_nojob" />
 
-    <Button
-        android:textSize="30sp"
-        android:id="@+id/button_generate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"
-        android:layout_marginEnd="50dp"
-        android:gravity="center"
-        android:text="@string/generate" />
-
     <TextView
         android:id="@+id/textView_newWord"
         android:textSize="40sp"
@@ -47,5 +35,44 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="400dp"
         android:text="@string/new_word" />
+
+    <TableLayout
+        android:id="@+id/TableGame"
+        android:layout_alignParentBottom="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:shrinkColumns="*"
+        android:stretchColumns="*"
+        >
+
+        <TableRow>
+        <FrameLayout
+            android:layout_height="wrap_content"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp">
+            <Button
+                android:id="@+id/button_skip"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bt_skip"
+                android:layout_gravity="left"/>
+
+            <Button
+                android:id="@+id/button_view"
+                android:background="@drawable/bt_view"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/button_check"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bt_check"
+                android:layout_gravity="right"/>
+            </FrameLayout>
+        </TableRow>
+    </TableLayout>
 
 </RelativeLayout>
