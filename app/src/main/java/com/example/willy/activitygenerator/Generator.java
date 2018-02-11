@@ -1,13 +1,16 @@
 package com.example.willy.activitygenerator;
 
+import android.content.Context;
 import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
@@ -17,6 +20,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Random;
+// import java.util.concurrent.ThreadLocalRandom;
 
 public class Generator extends AppCompatActivity {
 
@@ -29,6 +34,8 @@ public class Generator extends AppCompatActivity {
     // Text Views
     TextView txtWord;
 
+    //Job ImageView
+    ImageView jobView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,18 +49,46 @@ public class Generator extends AppCompatActivity {
         // Linking
         btnGenerate = findViewById(R.id.button_generate);
         txtWord = findViewById(R.id.textView_newWord);
+        jobView = findViewById(R.id.imageView_todo);
 
         final ArrayList<String> dict = loadDictionary();
 
         btnGenerate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //Generate random job:
+                int min = 1;
+                int max = 4;
+                int jobId = (int) (Math.random() * (max-min) + min);
+
                 String word = getRandomWord(dict);
+
+                //Print jobId into word for reference do:
+                // String jobword = String.valueOf(jobId);
+
                 txtWord.setText(word);
+
+                if (jobId==1)
+                {
+                    jobView.setImageResource(R.drawable.ic_draw);
+                }
+
+                if (jobId==2)
+                {
+                    jobView.setImageResource(R.drawable.ic_explain);
+                }
+
+                if (jobId==3)
+                {
+                    jobView.setImageResource(R.drawable.ic_meme);
+                }
             }
         });
     }
 
+
+    //OptionsMenu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.mainmenu,menu);
