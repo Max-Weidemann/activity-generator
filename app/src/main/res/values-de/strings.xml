@@ -10,4 +10,7 @@
     <string name="time_over">Ende!</string>
     <string name="time_left">übrig</string>
     <string name="points_limit">Punkte Limit</string>
+    <string name="team_3">Team 3</string>
+    <string name="team_4">Team 4</string>
+    <string name="jobimage">JobImage</string>
 </resources>

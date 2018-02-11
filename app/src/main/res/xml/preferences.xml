@@ -23,7 +23,7 @@
     <EditTextPreference
         android:defaultValue="10"
         android:icon="@drawable/ic_rounds"
-        android:inputType="number"
+        android:inputType="time"
         android:key="edit_text_preference_rounds"
         android:selectAllOnFocus="true"
         android:singleLine="true"

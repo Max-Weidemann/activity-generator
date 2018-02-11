@@ -1,17 +1,16 @@
 package com.example.willy.activitygenerator;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.support.v7.widget.Toolbar;
 import android.os.CountDownTimer;
-import android.content.Intent;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,8 +22,12 @@ import java.util.Locale;
 //Unused:
 /*import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.ContextMenu;
 import android.view.MenuInflater;
+import android.view.Menu;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.TextureView;
 import android.widget.TextClock;
 import android.widget.Toast;
@@ -36,30 +39,23 @@ public class Generator extends AppCompatActivity {
     // Buttons
     Button btnGenerate;
 
-    //Toolbar
-    Toolbar mToolbar;
-
     // Text Views
     TextView txtWord;
     TextView countdown_timer;
 
     //Job ImageView
     ImageView jobView;
-
     CountDownTimer cdt;
 
     public Generator() {
         cdt = null;
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generator);
-
-        //Activate Toolbar
-        mToolbar = findViewById(R.id.main_toolbar);
-        setSupportActionBar(mToolbar);
 
         // Linking
         btnGenerate = findViewById(R.id.button_generate);
@@ -80,7 +76,7 @@ public class Generator extends AppCompatActivity {
 
                 String word = getRandomWord(dict);
 
-                //Print jobId into word for reference do:
+                //For printing jobId into word for reference do:
                 // String jobword = String.valueOf(jobId);
 
                 txtWord.setText(word);
@@ -122,25 +118,6 @@ public class Generator extends AppCompatActivity {
 
             }
         });
-    }
-
-
-    //OptionsMenu
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.mainmenu,menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.action_settings:
-                Intent intent = new Intent(this, SettingsActivity.class);
-                startActivity(intent);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     private ArrayList<String> loadDictionary(){

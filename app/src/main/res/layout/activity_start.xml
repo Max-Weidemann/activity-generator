@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.willy.activitygenerator.StartActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:background="#828282"
+        android:id="@+id/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.Toolbar>
+
+    <Button
+        android:textSize="30sp"
+        android:id="@+id/button_play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="50dp"
+        android:gravity="center"
+        android:text="@string/play" />
+
+    <TableLayout
+        android:id="@+id/TableTeams"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_toolbar"
+        android:layout_marginTop="21dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/TextView_Table_Team1"
+                android:layout_weight="1"
+                android:background="#dcdcdc"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text="@string/team_1"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/TextView_Table_Team2"
+                android:layout_weight="1"
+                android:background="#dcdcdc"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text="@string/team_2"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/TextView_Table_Team3"
+                android:layout_weight="1"
+                android:background="#dcdcdc"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text="@string/team_3"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/TextView_Table_Team4"
+                android:layout_weight="1"
+                android:background="#dcdcdc"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text="@string/team_4"
+                android:textColor="#000000" />
+        </TableRow>
+
+        <TableRow>
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_play"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="21dp"
+        android:padding="20dip">
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/TextView_Table_Rounds"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/round_limit"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/TextView_Table_Points"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/point_limit"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/TextView_Table_Skips"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/skip_limit"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/TextView_Table_RoundTime"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/team_4"
+                android:textColor="#000000" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+            android:id="@+id/TextView_Table_RoundsShow"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/round_limit"
+            android:textColor="#dcdcdc" />
+            <TextView
+                android:id="@+id/TextView_Table_PointsShow"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/round_limit"
+                android:textColor="#dcdcdc" />
+            <TextView
+                android:id="@+id/TextView_Table_SkipsShow"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/round_limit"
+                android:textColor="#dcdcdc" />
+            <TextView
+                android:id="@+id/TextView_Table_RoundTimeShow"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/round_limit"
+                android:textColor="#dcdcdc" />
+        </TableRow>
+
+    </TableLayout>
+
+
+</RelativeLayout>
