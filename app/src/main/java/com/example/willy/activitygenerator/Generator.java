@@ -14,7 +14,6 @@ import android.os.CountDownTimer;
 import android.content.Intent;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -47,6 +46,11 @@ public class Generator extends AppCompatActivity {
     //Job ImageView
     ImageView jobView;
 
+    CountDownTimer cdt;
+
+    public Generator() {
+        cdt = null;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +100,10 @@ public class Generator extends AppCompatActivity {
                     jobView.setImageResource(R.drawable.ic_meme);
                 }
 
-                new CountDownTimer(300000, 1000) {
+                if (cdt != null) {
+                    cdt.cancel();
+                }
+                cdt = new CountDownTimer(300000, 1000) {
 
                     public void onTick(long millisUntilFinished) {
                         String text = String.format(Locale.getDefault(), "%02d:%02d",
@@ -109,7 +116,9 @@ public class Generator extends AppCompatActivity {
                     public void onFinish() {
                         countdown_timer.setText(R.string.time_over);
                     }
-                }.start();
+                };
+
+                cdt.start();
 
             }
         });
@@ -150,8 +159,6 @@ public class Generator extends AppCompatActivity {
                 dictionary.add(word);
             }
 
-        } catch (FileNotFoundException e){
-            e.printStackTrace();
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
