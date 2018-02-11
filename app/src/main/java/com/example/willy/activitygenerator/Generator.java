@@ -1,5 +1,6 @@
 package com.example.willy.activitygenerator;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
@@ -35,6 +36,10 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;*/
 
 public class Generator extends AppCompatActivity {
+
+    public static Intent makeGeneratorIntent (Context context) {
+        return new Intent(context, Generator.class);
+    }
 
     // Buttons
     Button btnGenerate;

@@ -28,8 +28,8 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.action_settings:
-                Intent intent = new Intent(this, SettingsActivity.class);
-                startActivity(intent);
+                Intent setIntent = SettingsActivity.makeSettingsIntent(StartActivity.this);
+                startActivity(setIntent);
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -51,11 +51,11 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v){
-        int ce =v.getId();
-        if(ce == R.id.button_play)
+        switch (v.getId())
         {
-            Intent intent = new Intent(StartActivity.this, Generator.class);
-            startActivity(intent);
+            case R.id.button_play:
+                Intent genIntent = Generator.makeGeneratorIntent(StartActivity.this);
+                startActivity(genIntent);
         }
     }
 }
